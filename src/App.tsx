@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { createWeb3ReactRoot, Web3ReactProvider } from '@web3-react/core';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import {
   ThemeProvider as MuiThemeProvider,
   CssBaseline,
@@ -50,7 +50,7 @@ import { PageLayout } from 'layouts';
 import { getLibrary } from 'utils';
 import StyledThemeProvider from 'theme/index';
 import { Web3ReactManager, Popups } from 'components';
-import { GlobalConst } from 'constants/index';
+import { GlobalConst, GlobalValue } from 'constants/index';
 import ApplicationUpdater from 'state/application/updater';
 import TransactionUpdater from 'state/transactions/updater';
 import ListsUpdater from 'state/lists/updater';
@@ -126,16 +126,14 @@ const AppContent = () => (
             <StyledThemeProvider>
               <Web3ReactManager>
                 <Switch>
-                  <Route exact path='/'>
-                    <PageLayout>
-                      <LandingPage />
-                    </PageLayout>
-                  </Route>
                   <Route exact path='/swap/:version?'>
                     <PageLayout>
                       <SwapPage />
                     </PageLayout>
                   </Route>
+                  <Redirect
+                    to={`/swap?swapIndex=0&currency0=ETH&currency1=${GlobalValue.tokens.COMMON.USDC.address}`}
+                  />
                   {/* <Route exact path='/lend'>
                     <PageLayout>
                       <LendPage />
@@ -174,19 +172,19 @@ const AppContent = () => (
                       <PoolsPage></PoolsPage>
                     </PageLayout>
                   </Route>
-                  <Route
+                  {/* <Route
                     exact
                     path='/increase/:currencyIdA?/:currencyIdB?/:tokenId'
                   >
                     <PageLayout>
                       <IncreaseLiquidityV3Page></IncreaseLiquidityV3Page>
                     </PageLayout>
-                  </Route>
-                  <Route exact path='/remove/:tokenId'>
+                  </Route> */}
+                  {/* <Route exact path='/remove/:tokenId'>
                     <PageLayout>
                       <RemoveLiquidityV3Page></RemoveLiquidityV3Page>
                     </PageLayout>
-                  </Route>
+                  </Route> */}
                   <Route exact path='/farm/:version?'>
                     <PageLayout>
                       <FarmPage />
@@ -197,7 +195,7 @@ const AppContent = () => (
                       <DragonPage />
                     </PageLayout>
                   </Route>
-                  <Route exact path='/convert'>
+                  {/* <Route exact path='/convert'>
                     <PageLayout>
                       <ConvertQUICKPage />
                     </PageLayout>
@@ -211,7 +209,7 @@ const AppContent = () => (
                     <RedirectExternal
                       to={`${process.env.REACT_APP_GAMEHUB_URL}`}
                     ></RedirectExternal>
-                  </Route>
+                  </Route> */}
                   <Route exact path='/analytics/:version?'>
                     <PageLayout>
                       <AnalyticsHeader />
