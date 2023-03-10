@@ -103,11 +103,11 @@ const Header: React.FC = () => {
       text: t('farm'),
       id: 'farm-page-link',
     },
-    // {
-    //   link: '/dragons',
-    //   text: t('dragonLair'),
-    //   id: 'dragons-page-link',
-    // },
+    {
+      link: '/dragons',
+      text: t('dragonLair'),
+      id: 'dragons-page-link',
+    },
     // {
     //   link: '/gamehub',
     //   text: 'Gaming Hub',

@@ -55,12 +55,12 @@ export enum SmartRouter {
 export const WALLCHAIN_PARAMS = {
   [ChainId.MATIC]: {
     [SmartRouter.PARASWAP]: {
-      apiURL: 'https://matic.wallchains.com/upgrade_txn/',
-      apiKey: '91b92acd-e8fd-49c3-80fd-db2bc58bb8cf',
+      apiURL: '',
+      apiKey: '',
     },
     [SmartRouter.QUICKSWAP]: {
-      apiURL: 'https://matic.wallchains.com/upgrade_txn/',
-      apiKey: '50eaf751-196d-4fe0-9506-b983f7c83735',
+      apiURL: '',
+      apiKey: '',
     },
   },
   [ChainId.MUMBAI]: {

@@ -233,48 +233,6 @@ const DragonsSyrup: React.FC = () => {
 
   return (
     <>
-      <Box className='flex flex-wrap items-center' mb={3.5}>
-        <Box
-          className='flex justify-between'
-          width={returnFullWidthMobile(isMobile)}
-          flex={isMobile ? 'unset' : 1}
-        >
-          <Box width={isMobile ? 'calc(100% - 150px)' : 1} mr={2} my={2}>
-            <SearchInput
-              placeholder={isMobile ? t('search') : t('searchPlaceHolder')}
-              value={syrupSearchInput}
-              setValue={setSyrupSearchInput}
-            />
-          </Box>
-          {isMobile && renderStakedOnly()}
-        </Box>
-        <Box
-          width={returnFullWidthMobile(isMobile)}
-          className='flex flex-wrap items-center'
-        >
-          <Box mr={2}>
-            <CustomSwitch width={160} height={40} items={syrupStatusItems} />
-          </Box>
-          {isMobile ? (
-            <>
-              <Box height={40} flex={1}>
-                <CustomMenu title={t('sortBy')} menuItems={sortByMobileItems} />
-              </Box>
-              <Box mt={2} width={1} className='flex items-center'>
-                <small className='text-disabled' style={{ marginRight: 8 }}>
-                  {sortDesc ? t('sortdesc') : t('sortasc')}
-                </small>
-                <ToggleSwitch
-                  toggled={sortDesc}
-                  onToggle={() => setSortDesc(!sortDesc)}
-                />
-              </Box>
-            </>
-          ) : (
-            renderStakedOnly()
-          )}
-        </Box>
-      </Box>
       <Divider />
       {!isMobile && (
         <Box mt={2.5} display='flex' paddingX={2}>
