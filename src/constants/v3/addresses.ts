@@ -78,7 +78,6 @@ export const EXCHANGE_FACTORY_ADDRESS_MAPS: ExchangeAddressMap = {
 
 export const EXCHANGE_PAIR_INIT_HASH_MAPS: ExchangeAddressMap = {
   [V2Exchanges.Quickswap]: {
-    //TODO: Verify the Pair INIT hash
     [ChainId.MATIC]:
       '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f',
   },

@@ -131,9 +131,6 @@ const AppContent = () => (
                       <SwapPage />
                     </PageLayout>
                   </Route>
-                  <Redirect
-                    to={`/swap?swapIndex=0&currency0=ETH&currency1=${GlobalValue.tokens.COMMON.USDC.address}`}
-                  />
                   {/* <Route exact path='/lend'>
                     <PageLayout>
                       <LendPage />
@@ -238,6 +235,9 @@ const AppContent = () => (
                       <AnalyticsPairDetails />
                     </PageLayout>
                   </Route> */}
+                  <Redirect
+                    to={`/swap?swapIndex=0&currency0=ETH&currency1=${GlobalValue.tokens.COMMON.USDC.address}`}
+                  />
                 </Switch>
               </Web3ReactManager>
             </StyledThemeProvider>
