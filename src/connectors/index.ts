@@ -6,8 +6,8 @@ import { UAuthConnector } from '@uauth/web3-react';
 import { WalletLinkConnector } from './WalletLink';
 import { PortisConnector } from './Portis';
 
-import { FortmaticConnector } from './Fortmatic';
-import { ArkaneConnector } from './Arkane';
+// import { FortmaticConnector } from './Fortmatic';
+// import { ArkaneConnector } from './Arkane';
 import { NetworkConnector } from './NetworkConnector';
 import { SafeAppConnector } from './SafeApp';
 import {
@@ -79,17 +79,17 @@ export const trustconnect = !!getTrustWalletInjectedProvider()
       qrcode: true,
     });
 
-// mainnet only
-export const arkaneconnect = new ArkaneConnector({
-  clientID: 'QuickSwap',
-  chainId: 137,
-});
+// // mainnet only
+// export const arkaneconnect = new ArkaneConnector({
+//   clientID: 'QuickSwap',
+//   chainId: 137,
+// });
 
-// mainnet only
-export const fortmatic = new FortmaticConnector({
-  apiKey: FORMATIC_KEY ?? '',
-  chainId: 137,
-});
+// // mainnet only
+// export const fortmatic = new FortmaticConnector({
+//   apiKey: FORMATIC_KEY ?? '',
+//   chainId: 137,
+// });
 
 // mainnet only
 export const portis = new PortisConnector({
